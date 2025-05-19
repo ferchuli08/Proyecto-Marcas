@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protips PvZ</title>
+  <link rel="stylesheet" href="../css/protips.css" />
+</head>
+<body>
+  <header>
+   <nav>
+      <ul>
+        <li><a href="../index.html" onclick="playSound(event, this)">Inicio</a></li>
+        <li><a href="juegos.html" onclick="playSound(event, this)">Juegos</a></li>
+        <li><a href="noticias.html" onclick="playSound(event, this)">Noticias</a></li>
+        <li><a href="protips.html" onclick="playSound(event, this)">Protips</a></li>
+        <li><a href="formulario.html" onclick="playSound(event, this)">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="cards-container">
+      <div class="card" tabindex="0">
+        <img src="../imagenes/PVZ1.jfif" alt="PvZ" />
+        <h2>Plants vs Zombies</h2>
+        <p class="tip">Planta una doble linea de girasoles al inicio para tener soles constantes.</p>
+      </div>
+      <div class="card" tabindex="0">
+        <img src="../imagenes/PVZ2.jfif" alt="PvZ 2" />
+        <h2>Plants vs Zombies 2</h2>
+        <p class="tip">Aprovecha los potenciadores del día para superar niveles difíciles.</p>
+      </div>
+      <div class="card" tabindex="0">
+        <img src="../imagenes/PVZGW.jpg" alt="Garden Warfare" />
+        <h2>GW1/2/BFN</h2>
+        <p class="tip">Juega en equipo y usa las habilidades especiales en el momento correcto.</p>
+      </div>
+      <div class="card" tabindex="0">
+        <img src="../imagenes/PVZHEROES.jfif" alt="PvZ Heroes" />
+        <h2>Plants vs Zombies Heroes</h2>
+        <p class="tip">Construye mazos con sinergia entre si para ganar.</p>
+      </div>
+    </div>
+  </main>
+
+  <audio id="menuSound" src="../sonidos/ZOMBIE-COLGADO.mp3" preload="auto"></audio>
+  <script>
+
+    // Toggle tip on click or Enter key for accessibility
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('show-tip');
+      });
+      card.addEventListener('keydown', e => {
+        if(e.key === 'Enter') {
+          card.classList.toggle('show-tip');
+        }
+      });
+    });
+
+    function playSound(event, link) {
+      event.preventDefault(); // Detiene la navegación inmediata
+      const sound = document.getElementById("menuSound");
+      sound.currentTime = 0;
+      sound.play();
+      sound.onended = function() {
+    window.location.href = link.href;  // Navega cuando termina el sonido
+  };
+    }
+  </script>
+</body>
+</html>

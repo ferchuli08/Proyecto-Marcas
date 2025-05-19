@@ -1,0 +1,50 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias | PvZ</title>
+  <link rel="stylesheet" href="../CSS/noticias.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="../index.html" onclick="playSound(event, this)">Inicio</a></li>
+      <li><a href="juegos.html" onclick="playSound(event, this)">Juegos</a></li>
+      <li><a href="noticias.html" onclick="playSound(event, this)">Noticias</a></li>
+      <li><a href="protips.html" onclick="playSound(event, this)">Protips</a></li>
+      <li><a href="formulario.html" onclick="playSound(event, this)">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h1>Últimas Noticias</h1>
+  <div class="noticia">
+    <h2>Nuevo Evento en PvZ 2</h2>
+    <p>PopCap lanza un nuevo evento temático con recompensas exclusivas.</p>
+    <a href="https://www.ea.com/games/plants-vs-zombies/plants-vs-zombies-2/news/everything-you-need-to-know-about-power-mints" target="_blank">Leer más</a>
+  </div>
+  <div class="noticia">
+    <h2>Garden Warfare 2 actualiza servidores</h2>
+    <p>Se mejoró la estabilidad para los modos multijugador. Nueva rotación de mapas disponible.</p>
+    <a href="https://www.ea.com/news" target="_blank">Ver actualización</a>
+  </div>
+  <div class="noticia">
+    <h2>Actualizacion de PVZ HEROES</h2>
+    <p>SE hicieron cambios de balance y arreglaron algunos problemas.</p>
+  <a href="https://www.ea.com/es-es/games/plants-vs-zombies/plants-vs-zombies-heroes/news/balance-update-for-december-2024" target="_blank">Ver mas</a>
+  </div>
+</main>
+<audio id="menuSound" src="../sonidos/ZOMBIE-COLGADO.mp3" preload="auto"></audio>
+<script>
+    function playSound(event, link) {
+      event.preventDefault(); // Detiene la navegación inmediata
+      const sound = document.getElementById("menuSound");
+      sound.currentTime = 0;
+      sound.play();
+      sound.onended = function() {
+    window.location.href = link.href;  // Navega cuando termina el sonido
+  };
+    }
+</script>
+</body>
+</html>

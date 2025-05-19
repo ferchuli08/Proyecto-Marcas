@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f0f8ff; /* un fondo claro y suave */
+  color: #333;
+}
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #f0fff0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #006400;
+  padding: 1em 0;
+  color: white;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+.cards-container {
+  max-width: 900px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: linear-gradient(125deg, #00feba, #5b548a);
+  border: 5px solid white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 250px;
+  height: 320px;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(91, 84, 138, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 auto 15px auto;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card .tip {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 1em;
+  line-height: 1.3em;
+  pointer-events: none;
+}
+
+.card.show-tip .tip {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(91, 84, 138, 0.9);
+}
+
+.card:focus {
+  outline: 3px solid #5b548a;
+}

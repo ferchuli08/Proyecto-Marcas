@@ -1,0 +1,58 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto | PvZ</title>
+  <link rel="stylesheet" href="../CSS/formulario.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="../index.html" onclick="playMenuSound(event, this)">Inicio</a></li>
+      <li><a href="juegos.html" onclick="playMenuSound(event, this)">Juegos</a></li>
+      <li><a href="noticias.html" onclick="playMenuSound(event, this)">Noticias</a></li>
+      <li><a href="protips.html" onclick="playMenuSound(event, this)">Protips</a></li>
+      <li><a href="formulario.html" onclick="playMenuSound(event, this)">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Formulario de Contacto</h1>
+  <form id="contactForm" onsubmit="enviarFormulario(event)">
+    <label>Nombre:<br><input type="text" name="nombre" required></label><br>
+    <label>Email:<br><input type="email" name="email" required></label><br>
+    <label>Asunto:<br><input type="text" name="asunto"></label><br>
+    <label>Mensaje:<br><textarea name="mensaje" rows="5"></textarea></label><br>
+    <button type="submit">Enviar</button>
+  </form>
+</main>
+
+<!-- Audios -->
+<audio id="menuSound" src="../sonidos/ZOMBIE-COLGADO.mp3" preload="auto"></audio>
+<audio id="submitSound" src="../sonidos/Arecoming.mp3" preload="auto"></audio>
+
+<script>
+  function playMenuSound(event, link) {
+    event.preventDefault();
+    const sound = document.getElementById("menuSound");
+    sound.currentTime = 0;
+    sound.play();
+    sound.onended = function () {
+      window.location.href = link.href;
+    };
+  }
+
+  function enviarFormulario(event) {
+    event.preventDefault();
+    alert("Mensaje enviado");
+    const sound = document.getElementById("submitSound");
+    sound.currentTime = 0;
+    sound.play();
+
+    // Resetea los campos del formulario
+    document.getElementById("contactForm").reset();
+  }
+</script>
+</body>
+</html>

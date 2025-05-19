@@ -1,0 +1,58 @@
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #f0fff0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #006400;
+  padding: 1em 0;
+  color: white;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+
+main {
+  padding: 2em;
+}
+
+section {
+  background: #ffffff;
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 800px;
+  border-radius: 10px;
+  border: 2px solid rgba(128, 0, 128, 0.3); /* borde morado translúcido */
+  box-shadow: 0 4px 8px rgba(147, 112, 219, 0.2); /* sombra lila suave */
+}
+
+section img {
+  width: 100%;         /* Que ocupe el ancho máximo de la tarjeta */
+  max-width: 400px;    /* No más ancho que 400px */
+  height: 250px;       /* Altura fija para uniformidad */
+  object-fit: cover;   /* Que la imagen mantenga proporción y recorte si es necesario */
+  border-radius: 10px; /* Bordes redondeados para el diseño */
+  margin: 1em 0;
+}
